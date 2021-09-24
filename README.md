@@ -1,3 +1,70 @@
+# eb cli commands output (for task 8)
+
+```
+$ eb init -r eu-west-1 unfalse-cart-api
+
+It appears you are using Docker. Is this correct?
+(Y/n): y
+Select a platform branch.
+1) Docker running on 64bit Amazon Linux 2
+2) Multi-container Docker running on 64bit Amazon Linux (Deprecated)
+3) Docker running on 64bit Amazon Linux (Deprecated)
+(default is 1): 3
+
+Alert: You chose a deprecated platform branch. It might not be supported in the future.
+
+Do you wish to continue with CodeCommit? (Y/n): n
+Do you want to set up SSH for your instances?
+(Y/n): n
+```
+
+```
+$ eb create develop -s -c unfalse-cart-api-develop
+Alert: You chose a deprecated platform branch. It might not be supported in the future.
+
+Creating application version archive "app-32fc-210923_071059".
+Uploading unfalse-cart-api/app-32fc-210923_071059.zip to S3. This may take a while.
+Upload Complete.
+Environment details for: develop
+  Application name: unfalse-cart-api
+  Region: eu-west-1
+  Deployed Version: app-32fc-210923_071059
+  Environment ID: e-5ynkqy8xxb
+  Platform: arn:aws:elasticbeanstalk:eu-west-1::platform/Docker running on 64bit Amazon Linux/2.16.11
+  Tier: WebServer-Standard-1.0
+  CNAME: unfalse-cart-api-develop.eu-west-1.elasticbeanstalk.com
+  Updated: 2021-09-23 02:11:00.933000+00:00
+Alert: Your environment is using a deprecated platform branch. It might not be supported in the future.
+
+Printing Status:
+2021-09-23 02:11:00    INFO    createEnvironment is starting.
+2021-09-23 02:11:01    INFO    Using elasticbeanstalk-eu-west-1-030019190562 as Amazon S3 storage bucket for environment data.
+2021-09-23 02:11:20    INFO    Created security group named: awseb-e-5ynkqy8xxb-stack-AWSEBSecurityGroup-1L3H3ZVZDRBZY
+2021-09-23 02:11:35    INFO    Created EIP: 63.32.220.54
+2021-09-23 02:12:26    INFO    Waiting for EC2 instances to launch. This may take a few minutes.
+2021-09-23 02:13:22    INFO    Successfully pulled node:14.17-alpine
+2021-09-23 02:15:25    INFO    Successfully built aws_beanstalk/staging-app
+2021-09-23 02:15:34    INFO    Docker container 671902dab6c3 is running aws_beanstalk/current-app.
+2021-09-23 02:15:50    INFO    Application available at unfalse-cart-api-develop.eu-west-1.elasticbeanstalk.com.
+2021-09-23 02:15:51    INFO    Successfully launched environment: develop
+```
+
+```
+$ eb deploy
+Alert: Your environment is using a deprecated platform branch. It might not be supported in the future.
+
+Creating application version archive "app-32fc-210924_072400".
+Uploading unfalse-cart-api/app-32fc-210924_072400.zip to S3. This may take a while.
+Upload Complete.
+2021-09-24 02:24:01    INFO    Environment update is starting.      
+2021-09-24 02:24:05    INFO    Deploying new version to instance(s).
+2021-09-24 02:24:12    INFO    Successfully pulled node:14.17-alpine
+2021-09-24 02:24:12    INFO    Successfully built aws_beanstalk/staging-app
+2021-09-24 02:24:31    INFO    Docker container 1cdac6b9f7a9 is running aws_beanstalk/current-app.
+2021-09-24 02:24:39    INFO    New application version was deployed to running EC2 instances.
+2021-09-24 02:24:39    INFO    Environment update completed successfully.
+```
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
