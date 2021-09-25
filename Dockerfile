@@ -1,22 +1,3 @@
-# FROM node:14.17-alpine AS dependencies
-# WORKDIR /app
-# COPY package*.json ./
-# RUN npm install && npm cache clean --force
-
-# FROM dependencies AS build
-# COPY . .
-# RUN npm run build
-
-# FROM node:14.17-alpine AS application
-# COPY --from=base package*.json ./
-# RUN npm install --only=production
-# RUN npm install pm2 -g
-# COPY --from=base dist ./dist
-
-# USER node
-# EXPOSE 4000
-# ENTRYPOINT ["node", "dist/main.js"]
-
 # https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/
 FROM node:lts-alpine@sha256:8c94a0291133e16b92be5c667e0bc35930940dfa7be544fb142e25f8e4510a45 AS deps
 WORKDIR /app
