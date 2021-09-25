@@ -2,3 +2,9 @@
 node_modules
 # dist will be created during building the docker image
 dist
+
+.dockerignore
+npm-debug.log
+Dockerfile
+.git
+.gitignore
