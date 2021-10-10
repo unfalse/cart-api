@@ -1,0 +1,10 @@
+# sources from node_modules aren't needed as all modules will be installed during the image creation
+node_modules
+# dist will be created during building the docker image
+dist
+
+.dockerignore
+npm-debug.log
+Dockerfile
+.git
+.gitignore
